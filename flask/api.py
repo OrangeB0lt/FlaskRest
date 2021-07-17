@@ -8,7 +8,10 @@ api = Api(app)
 
 @app.route('/', methods=['GET'])
 def Message():
-    response = flask.jsonify({'message': 'Hello Babe, I am working', 'smessages':'This is a second string'})
+    response = flask.jsonify({'message': 'Hello Babe, I am working', 
+                              'smessage': 'This is a second string'},
+                              {'message': 'Hello JOEB, I am working', 
+                              'smessage': 'This is JOEB second string'})
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 

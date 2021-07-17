@@ -1,12 +1,12 @@
 import './App.css';
-import MyComponent from './MyComponent'
+import MyComponent from './readRest'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
       </header>
-      <div>
+      <div className="App-body">
         <MyComponent />
       </div>
     </div>

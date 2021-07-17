@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
+  
 
 const MyComponent = () => {
     const [ messages, setMessages ] = useState([]);
+
     
     useEffect(() => {
         (async() => {
@@ -12,10 +14,12 @@ const MyComponent = () => {
                 const { data } = response;
                 
                 if(data){
-                    setMessages(data);
+                    setMessages(data)
                 }
                 console.log(data)
-                console.debug(data);    
+                console.log(messages)
+                console.debug(data);
+                await new Promise(resolve => setTimeout(resolve, 2000))    
             }
             catch (e) {
                 console.error(e);            
@@ -23,14 +27,18 @@ const MyComponent = () => {
         })()
     })
     
-    return <div>
-        <p>{JSON.stringify(messages.message)}</p>
-    </div>    
+    return <div className="App-body">
+    <p>{messages.map(message => <div><p>{message.smessage}</p></div>)}</p>
+</div>    
 };
 
+
+//.message.map(message => <p>{message.message}</p>)
 /*
-return <div>
+return <div className="App-body">
         {messages.map(message => <p>{message}</p>)}
-    </div>   
+    </div>    
+    
+
 */
 export default MyComponent;
