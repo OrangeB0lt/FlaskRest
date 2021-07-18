@@ -15,6 +15,11 @@ def Message():
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
+@app.route('/create_user', methods=['POST'])
+def login():
+    data = request.json
+    return 0
+    
 
 if __name__ == '__main__':
     app.run(debug=True)
