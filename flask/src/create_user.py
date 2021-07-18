@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey, Table, MetaData, Seq
 from sqlalchemy.orm import create_engine
 import uuid
 
-db_string = "postgresql://OrangeB0lt_demo_db_connection:9p54_McAnEACjE9R6KsC99jxXs3i@db.bit.io"
+
 
 db = create_engine(db_string)
 
